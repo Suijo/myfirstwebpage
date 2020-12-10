@@ -19,7 +19,7 @@ public class teamsService {
     private myfirstwebpage.dao.teamsDao teamsDao;
 
     public Collection<teams> getAllTeams(){
-        return (Collection<teams>) teamsDao.getAllteams();
+        return (Collection<teams>) teamsDao.getAllTeams();
     }
 
     public Optional<teams> getTeamByID(int tid){

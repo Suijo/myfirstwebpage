@@ -22,7 +22,7 @@ public class matchesService {
         return matchesDao.getAllmatches();
     }
 
-    public Optional<matches> getMatchByID(int mid){
+    public Optional<matches> getMatchByID(String mid){
         return this.matchesDao.getMatchById(mid);
     }
 

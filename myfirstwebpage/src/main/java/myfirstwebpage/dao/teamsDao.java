@@ -1,13 +1,9 @@
 package myfirstwebpage.dao;
 
-import myfirstwebpage.repository.Entity.matches;
-import myfirstwebpage.repository.Entity.players;
 import myfirstwebpage.repository.Entity.teams;
-import myfirstwebpage.repository.MatchesRepository;
 import myfirstwebpage.repository.TeamsRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
 import java.util.Optional;
 
 
@@ -20,8 +16,10 @@ public class teamsDao {
     public teamsDao(TeamsRepository teams) {
         this.repository = teams;
     }
-    public teams getAllteams(){
-        return (teams) repository.findAll();
+
+
+    public Iterable<teams> getAllTeams(){
+        return repository.findAll();
 
     }
     public Optional<teams> getTeamById(int id){

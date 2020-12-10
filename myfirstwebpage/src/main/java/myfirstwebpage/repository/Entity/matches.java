@@ -6,9 +6,13 @@ import java.util.Date;
 @Entity
 public class matches {
 
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private String mid;
+    @Column(name = "mid")
+    private String id;
+    //@Id
+    //@GeneratedValue(strategy= GenerationType.IDENTITY)
+    //private String mid;
     @Column
     private int season;
     @Column
@@ -92,8 +96,9 @@ public class matches {
     @Column
     private Integer target;
 
-    public matches(String mid, int season, String round, Integer tid1, Integer tid2, String tid1_loc, String tid2_loc, Date start_dt, String venue, Integer att, Integer margin, Integer win_score, Integer win_tid, String win_loc, Integer lose_score, String lose_loc, Integer lose_tid, Integer h_tid, Integer h_score, Integer h_q1g, Integer h_q2g, Integer h_q3g, Integer h_q4g, Integer h_etg, Integer h_q1b, Integer h_q2b, Integer h_q3b, Integer h_q4b, Integer h_etb, Integer a_tid, Integer a_score, Integer a_q1g, Integer a_q2g, Integer a_q3g, Integer a_q4g, Integer a_etg, Integer a_q1b, Integer a_q2b, Integer a_q3b, Integer a_q4b, Integer a_etb, Integer target) {
-        this.mid = mid;
+    public matches(String id, /*String mid,*/ int season, String round, Integer tid1, Integer tid2, String tid1_loc, String tid2_loc, Date start_dt, String venue, Integer att, Integer margin, Integer win_score, Integer win_tid, String win_loc, Integer lose_score, String lose_loc, Integer lose_tid, Integer h_tid, Integer h_score, Integer h_q1g, Integer h_q2g, Integer h_q3g, Integer h_q4g, Integer h_etg, Integer h_q1b, Integer h_q2b, Integer h_q3b, Integer h_q4b, Integer h_etb, Integer a_tid, Integer a_score, Integer a_q1g, Integer a_q2g, Integer a_q3g, Integer a_q4g, Integer a_etg, Integer a_q1b, Integer a_q2b, Integer a_q3b, Integer a_q4b, Integer a_etb, Integer target) {
+        this.id = id;
+        //this.mid = mid;
         this.season = season;
         this.round = round;
         this.tid1 = tid1;
@@ -138,13 +143,21 @@ public class matches {
     }
     public matches(){}
 
-    public String getMid() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /*public String getMid() {
         return mid;
     }
 
     public void setMid(String mid) {
         this.mid = mid;
-    }
+    }*/
 
     public int getSeason() {
         return season;

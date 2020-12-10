@@ -22,7 +22,7 @@ public class match_statsService {
         return (Collection<match_stats>) statsDao.getAllstats();
     }
 
-    public Optional<match_stats> getStatByID(int  mid){
+    public Optional<match_stats> getStatByID(int mid){
         return this.statsDao.getStatById(mid);
     }
 

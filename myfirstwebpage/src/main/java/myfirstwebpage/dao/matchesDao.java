@@ -19,9 +19,9 @@ public class matchesDao {
         return (Collection<matches>) repository.findAll();
     }
 
-    public Optional<matches> getMatchById(int id){
+    public Optional<matches> getMatchById(String mid){
 
-        return this.repository.findById(id);
+        return this.repository.findById(mid);
     }
 
     public void  insertMatch(matches match) {

@@ -18,9 +18,9 @@ public class match_statsDao {
         return repository.findAll();
 
     }
-    public Optional<match_stats> getStatById(int id){
+    public Optional<match_stats> getStatById(int mid){
 
-        return this.repository.findById(id);
+        return this.repository.findById(mid);
     }
     public void  insertStats (match_stats stats) {
         this.repository.save(stats);

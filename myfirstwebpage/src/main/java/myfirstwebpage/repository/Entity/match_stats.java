@@ -8,8 +8,9 @@ import java.util.Date;
 public class match_stats {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private String mid;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "mid")
+    private String id;
     @Column
     private int pid;
     @Column
@@ -63,8 +64,9 @@ public class match_stats {
     @Column
     private float PP;
 
-    public match_stats(String mid, int pid, int dob, Integer tid, String loc, Integer KI, Integer MK, Integer HB, Integer DI, Integer GL, Integer BH, Integer HO, Integer TK, Integer RB, Integer IF, Integer CL, Integer CG, Integer FF, Integer FA, Integer BR, Integer CP, Integer UP, Integer CM, Integer MI, float LP, Integer BO, Integer GA, float PP) {
-        this.mid = mid;
+    public match_stats(String id,/*String mid,*/ int pid, int dob, Integer tid, String loc, Integer KI, Integer MK, Integer HB, Integer DI, Integer GL, Integer BH, Integer HO, Integer TK, Integer RB, Integer IF, Integer CL, Integer CG, Integer FF, Integer FA, Integer BR, Integer CP, Integer UP, Integer CM, Integer MI, float LP, Integer BO, Integer GA, float PP) {
+        this.id = id;
+        //this.mid = mid;
         this.pid = pid;
         this.tid = tid;
         this.loc = loc;
@@ -94,13 +96,21 @@ public class match_stats {
     }
     public match_stats(){}
 
-    public String getMid() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    /*public String getMid() {
         return mid;
     }
 
     public void setMid(String mid) {
         this.mid = mid;
-    }
+    }*/
 
     public int getPid() {
         return pid;
